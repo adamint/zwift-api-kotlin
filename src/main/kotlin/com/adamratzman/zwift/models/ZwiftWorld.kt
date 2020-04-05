@@ -9,7 +9,8 @@ enum class ZwiftWorldEnum(val number: Int) {
     LONDON(3),
     NEW_YORK(4),
     INNSBRUCK(5),
-    YORKSHIRE(6)
+    YORKSHIRE(7),
+    CRIT_CITY(8)
 }
 
 @Serializable
@@ -32,7 +33,7 @@ data class ZwiftWorldPlayer(
     val ftp: Int,
     val lastName: String,
     val male: Boolean,
-    val mapId: Int,
+    @SerialName("mapId") val worldId: Int,
     val playerId: Int,
     val playerType: String,
     val rideDurationInSeconds: Int,

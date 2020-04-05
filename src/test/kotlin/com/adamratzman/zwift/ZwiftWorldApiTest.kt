@@ -11,10 +11,11 @@ class ZwiftWorldApiTest {
     @Test
     fun getPlayers() {
         runBlocking {
-            val world = api.getWorld(ZwiftWorldEnum.WATOPIA)
-            println(world.worldPlayers[0])
+            ZwiftWorldEnum.values().forEach { worldEnum ->
+                val world = api.getWorld(worldEnum)
+                println(world.worldPlayers[0])
 
-            println(world.worldPlayers.filter { it.firstName.startsWith("X") && it.lastName.startsWith("T") })
+            }
 
         }
     }
