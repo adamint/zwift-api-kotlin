@@ -52,7 +52,7 @@ class ZwiftPersonalProfileApiTest {
     fun giveRideOn() {
         runBlocking {
             println(api.playerId)
-            val players = client.worldApi.getWorld(ZwiftWorldEnum.WATOPIA)
+            val players = client.worldApi.getWorld()
             val player = players.worldPlayers[9]
             println(player)
             println(client.worldApi.getPlayerStatus(ZwiftWorldEnum.WATOPIA, player.playerId))

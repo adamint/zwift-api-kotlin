@@ -11,11 +11,8 @@ class ZwiftWorldApiTest {
     @Test
     fun getPlayers() {
         runBlocking {
-            ZwiftWorldEnum.values().forEach { worldEnum ->
-                val world = api.getWorld(worldEnum)
+                val world = api.getWorld()
                 println(world.worldPlayers[0])
-
-            }
 
         }
     }
@@ -23,7 +20,7 @@ class ZwiftWorldApiTest {
     @Test
     fun getPlayerStatus() {
         runBlocking {
-            val playerState = api.getPlayerStatus(ZwiftWorldEnum.WATOPIA, api.getWorld(ZwiftWorldEnum.WATOPIA).worldPlayers[0].playerId)
+            val playerState = api.getPlayerStatus(ZwiftWorldEnum.WATOPIA, api.getWorld().worldPlayers[0].playerId)
             println(playerState)
         }
     }

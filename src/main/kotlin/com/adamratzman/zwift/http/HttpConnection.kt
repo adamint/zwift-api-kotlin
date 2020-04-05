@@ -139,7 +139,6 @@ class HttpConnection constructor(
         currentExecution: Int = 0
     ): HttpResponse {
         val httpRequest = buildRequest(additionalHeaders)
-        println(httpRequest.url.build().toString())
         try {
             return client.request<io.ktor.client.statement.HttpResponse>(httpRequest).let { response ->
                 val respCode = response.status.value
